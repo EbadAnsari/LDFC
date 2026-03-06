@@ -1,0 +1,4 @@
+{
+  "name": "Python Only Codespace",
+  "image": "mcr.microsoft.com/devcontainers/python:3.8"
+}
