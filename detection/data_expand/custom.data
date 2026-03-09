@@ -1,0 +1,4 @@
+classes=1
+train=./detection/data_expand/train.txt
+valid=./detection/data_expand/val.txt
+names=./detection/data_expand/classes.names
