@@ -1,21 +1,21 @@
 import argparse
 import datetime
+import glob
 import json
 import os
 from os.path import join
-import glob
 
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sn
 import torch
 import torch.optim as optim
+from adan_pytorch import Adan
+# from resnet50 import resnet50
+from ConvNext import convnext_base
 from sklearn.metrics import confusion_matrix
 from torch.utils.tensorboard import SummaryWriter
 from torchvision import datasets, transforms
-
-from adan_pytorch import Adan
-from resnet50 import resnet50
 from train_utils import (create_lr_scheduler, evaluate, get_params_groups,
                          train_one_epoch)
 
@@ -73,7 +73,7 @@ def main(args):
                                              num_workers=0)
 
     # Initialize model
-    model = resnet50(num_classes=args.num_classes)
+    model = convnext_base(num_classes=args.num_classes)
     model.to(device)
 
     # Optimizer & scheduler

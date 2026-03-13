@@ -95,7 +95,7 @@ def train(hyp):
                 # Attempt to load only the tensor data if the current
                 # PyTorch version supports the `weights_only` flag.
                 try:
-                    ckpt = torch.load(weights, map_location=device, weights_only=True)
+                ckpt = torch.load(weights, map_location=device, weights_only=True)
                 except TypeError:
                     raise RuntimeError(
                         f"Incompatible checkpoint '{weights}'. It was saved from a "
